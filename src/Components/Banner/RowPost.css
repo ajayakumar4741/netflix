@@ -32,3 +32,9 @@
 .small-poster:hover{
     transform: scale(1.01);
 }
+.no-video-message {
+  color: #f00;
+  margin-top: 2px;
+  font-weight: bold;
+  padding: 5px;
+}
