@@ -6,9 +6,12 @@ function Banner() {
   const [movie,setMovie] = useState(null)
   useEffect(()=>{
     axios.get(`trending/all/week?api_key=${API_KEY}&language=en-US`).then((response)=>{
-      console.log(response.data.results[0])
-      setMovie(response.data.results[0])
-    })
+      const results = response.data.results;
+        const randomIndex = Math.floor(Math.random() * results.length);
+        const selectedMovie = results[randomIndex];
+        console.log(selectedMovie);
+        setMovie(selectedMovie);
+       })
   },[])
   return (
    <div style={{backgroundImage:`url(${movie ? imageUrl+movie.backdrop_path:''})`}}
